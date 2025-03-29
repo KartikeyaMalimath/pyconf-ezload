@@ -13,9 +13,9 @@ key2: value2
 
 
 # Define a custom Pydantic model for testing
-class TestConfigModel(BaseModel):
+class ConfigModel(BaseModel):
     key1: str
-    key3: str
+    key2: str
 
 
 # Test loading from JSON file
@@ -42,7 +42,7 @@ def test_load_json_config(json_config):
 
 
 def test_load_json_config_with_model(json_config):
-    loader = ConfigLoader(config_source=str(json_config), config_model=TestConfigModel)
+    loader = ConfigLoader(config_source=str(json_config), config_model=ConfigModel)
     config = loader.load()
 
     assert config == {"key1": "value1", "key2": "value2"}
