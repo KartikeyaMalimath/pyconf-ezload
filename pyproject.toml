@@ -1,6 +1,6 @@
 [project]
 name = "pyconf-ezload"
-version = "0.1.1"
+version = "0.1.0"
 description = "A Python package for loading, validating, configurations from various sources."
 authors = [
     {name = "Kartikeya Malimath", email = "kartikeyapm@gmail.com"}
