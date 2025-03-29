@@ -1,0 +1,30 @@
+[project]
+name = "pyconfig-loader"
+version = "0.1.0"
+description = "A Python package for loading, validating, configurations from various sources."
+authors = [
+    {name = "Kartikeya Malimath", email = "kartikeyapm@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+homepage = "https://github.com/KartikeyaMalimath/pyconfig_loader"
+repository = "https://github.com/KartikeyaMalimath/pyconfig_loader"
+documentation = "https://github.com/KartikeyaMalimath/pyconfig_loader"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+pyyaml = "^6.0.2"
+watchdog = "^6.0.0"
+jsonschema = "^4.23.0"
+pydantic = "^2.11.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+flake8 = "^7.1.2"
+black = "^25.1.0"
+mypy = "^1.15.0"
+
