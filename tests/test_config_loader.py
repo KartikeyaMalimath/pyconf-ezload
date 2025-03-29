@@ -2,7 +2,7 @@ import os
 import pytest
 from pydantic import BaseModel
 
-from pyconfig_loader.config_loader import ConfigLoader
+from pyconf_ezload.config_loader import ConfigLoader
 
 # Sample config file content for testing
 sample_json_config = '{"key1": "value1", "key2": "value2"}'
