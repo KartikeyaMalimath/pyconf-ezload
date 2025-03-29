@@ -18,21 +18,23 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.9"
 
-      - name: Install build dependencies
+      - name: Install Poetry
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install build
+          curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Install dependencies using Poetry
+        run: |
+          poetry install
 
       - name: Run tests (optional but recommended)
         run: |
-          python -m pip install -r requirements.txt
-          pytest  # Or use any testing framework you prefer
+          poetry run pytest  # Or use any testing framework you prefer
 
       - name: Build release distributions
         run: |
-          python -m build
+          poetry build
 
       - name: Check if dist directory has files
         run: ls dist/
