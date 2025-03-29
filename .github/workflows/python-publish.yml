@@ -12,17 +12,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Install dependencies
-        run: python -m pip install --upgrade build
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install build
+
+      - name: Run tests (optional but recommended)
+        run: |
+          python -m pip install -r requirements.txt
+          pytest  # Or use any testing framework you prefer
 
       - name: Build release distributions
-        run: python -m build
+        run: |
+          python -m build
+
+      - name: Check if dist directory has files
+        run: ls dist/
 
       - name: Upload distributions
         uses: actions/upload-artifact@v4
@@ -40,9 +53,6 @@ jobs:
       name: pypi
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: Retrieve release distributions
         uses: actions/download-artifact@v4
         with:
@@ -54,5 +64,5 @@ jobs:
         with:
           packages-dir: dist/
         env:
-          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
