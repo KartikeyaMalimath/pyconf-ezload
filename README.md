@@ -1,14 +1,14 @@
 
-# pyconfig-loader
+# pyconf-ezload
 
-`pyconfig-loader` is a simple Python library for loading configurations from different sources such as environment variables and configuration files (JSON/YAML). It supports flexible configurations with features like default values, required keys, and filtering based on key prefixes.
+`pyconf-ezload` is a simple Python library for loading configurations from different sources such as environment variables and configuration files (JSON/YAML). It supports flexible configurations with features like default values, required keys, and filtering based on key prefixes.
 
 ## Installation
 
 To install the package, you can use `pip`:
 
 ```bash
-pip install pyconfig-loader
+pip install pyconf-ezload
 ```
 
 Alternatively, you can install it from the source using `poetry`:
@@ -105,11 +105,11 @@ config = loader.load_from_env(
 
 ## Development
 
-To contribute to `pyconfig-loader`, you can clone the repository and use `poetry` to manage dependencies and run tests.
+To contribute to `pyconf-ezload`, you can clone the repository and use `poetry` to manage dependencies and run tests.
 
 ```bash
-git clone https://github.com/yourusername/pyconfig-loader.git
-cd pyconfig-loader
+git clone https://github.com/yourusername/pyconf-ezload.git
+cd pyconf-ezload
 poetry install
 poetry run pytest  # To run tests
 ```
